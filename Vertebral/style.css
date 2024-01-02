@@ -1062,13 +1062,13 @@ body {
   }
 
   .main__contact3 {
-    background-image: url("Vertebral/images/jona.jpeg");
+    background-image: url("images/jona.jpeg");
 
     border-top: solid 2px var(--Orange);
   }
 
   .main__contact5 {
-    background-image: url("Vertebral/images/imgAle1.png");
+    background-image: url("images/imgAle1.png");
 
     border-top: solid 2px var(--Orange);
   }
