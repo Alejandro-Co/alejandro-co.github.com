@@ -590,7 +590,7 @@ body {
     margin-bottom: 10%;
     min-height: 250px;
     height: 100%;
-    background-image: url(images/produkt.jpg);
+    background-image: url(images/Produkt.jpg);
     filter: brightness(0.8) contrast(0.7) saturate(1.1) sepia(0.09);
     background-size: cover;
     background-position: center;
