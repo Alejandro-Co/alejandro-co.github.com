@@ -245,10 +245,10 @@ const left = document.querySelector("#left");
 const right = document.querySelector("#right");
 
 const images = [
-  'url("/images/FER1.jpg")',
-  'url("/images/COOK.jpg")',
-  'url("/images/OFICE2.jpg")',
-  'url("/images/DESCANSO.jpg")',
+  "url(images/FER1.jpg)",
+  "url(images/COOK.jpg)",
+  "url(images/OFICE2.jpg)",
+  "url(images/DESCANSO.jpg)",
 ];
 
 const hero = document.querySelector(".main__hero");

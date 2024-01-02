@@ -349,7 +349,7 @@ body {
     grid-area: img1;
     min-height: 250px;
     height: 100%;
-    background-image: url("../images/FER2.webp");
+    background-image: url(images/FER2.webp);
     filter: brightness(0.8) contrast(0.7) saturate(1.1) sepia(0.09);
     background-size: cover;
     background-position: center;
@@ -382,7 +382,7 @@ body {
 
   .main__bg--second {
     grid-area: img2;
-    background-image: url("../images/FER3.webp");
+    background-image: url(images/FER3.webp);
     filter: brightness(0.8) contrast(0.7) saturate(1.1) sepia(0.09);
     -webkit-animation: blured 6s linear 0s;
     animation: blured 6s linear 0s;
@@ -428,7 +428,7 @@ body {
 
   #main__h {
     background-color: var(--Black);
-    background-image: url("../images/projectmain.webp");
+    background-image: url(images/projectmain.webp);
     background-size: cover;
     background-position: center;
     grid-area: main1;
@@ -579,7 +579,7 @@ body {
     margin-bottom: 10%;
     min-height: 250px;
     height: 100%;
-    background-image: url("../images/img1.webp");
+    background-image: url(images/img1.webp);
     filter: brightness(0.8) contrast(0.7) saturate(1.1) sepia(0.09);
     background-size: cover;
     background-position: center;
@@ -590,7 +590,7 @@ body {
     margin-bottom: 10%;
     min-height: 250px;
     height: 100%;
-    background-image: url("../images/produkt.webp");
+    background-image: url(images/produkt.webp);
     filter: brightness(0.8) contrast(0.7) saturate(1.1) sepia(0.09);
     background-size: cover;
     background-position: center;
@@ -601,7 +601,7 @@ body {
     margin-bottom: 10%;
     min-height: 150px;
     height: 100%;
-    background-image: url("../images/icon.jpg");
+    background-image: url(images/icon.jpg);
     filter: brightness(0.8) contrast(0.7) saturate(1.1) sepia(0.09);
     background-size: cover;
     background-position: 50% 50%;
@@ -682,7 +682,7 @@ body {
         rgb(0, 0, 0) 0%,
         rgba(255, 193, 70, 0) 93%
       ),
-      url("../images/img2.webp");
+      url(images/img2.webp);
     background-size: cover;
     background-position: center;
     background-blend-mode: normal;
@@ -753,7 +753,7 @@ body {
     margin-bottom: 10%;
     min-height: 150px;
     height: 100%;
-    background-image: url("../images/jona.jpeg");
+    background-image: url(images/jona.jpeg);
     filter: brightness(0.8) contrast(0.7) saturate(1.1) sepia(0.09);
     background-size: cover;
     background-position: 25% 40%;
@@ -789,7 +789,7 @@ body {
     margin-bottom: 10%;
     min-height: 150px;
     height: 100%;
-    background-image: url("../images/imgAle2.png");
+    background-image: url(images/imgAle2.png);
     filter: brightness(0.8) contrast(0.7) saturate(1.1) sepia(0.09);
     background-size: contain;
     background-position: center;
@@ -825,7 +825,7 @@ body {
     grid-area: Veertebral;
     min-height: 250px;
     height: 100%;
-    background-image: url("../images/vertebral.png");
+    background-image: url(images/vertebral.png);
     background-size: contain;
     background-position: center;
 
