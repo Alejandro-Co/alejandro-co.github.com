@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="svg" sizes="32x32" href="images/icon.png" />
+
+    <title>Vertebral</title>
+
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body id="body1">
+    <main class="main">
+      <section
+        class="main__hero"
+        style="background-image: url('images/FER1.jpg')"
+      >
+        <nav class="main__nav container">
+          <div class="main__menuicon">
+            <img
+              src="images/icon-hamburger.svg"
+              alt="Hamburguer Menu"
+              class="main__hamburguer"
+            />
+            <img
+              src="images/icon-close.svg"
+              alt="close Menu"
+              class="main__close"
+            />
+          </div>
+
+          <img src="images/logo.png" alt="Logo" class="main__logo" />
+
+          <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Leng</button>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="#" data-value="active" id="Esp">Esp</a>
+              <a href="#" data-value="inactive" id="Eng">Eng</a>
+            </div>
+          </div>
+
+          <ul class="main__menu">
+            <li class="main__list">
+              <a class="main__link" href="#" id="link1">Principal</a>
+            </li>
+            <li class="main__list">
+              <a class="main__link" href="project.html" id="link2">Proceso</a>
+            </li>
+            <li class="main__list">
+              <a class="main__link" href="contact.html" id="link3">Nosotros</a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="main__controls">
+          <img
+            src="images/icon-angle-left.svg"
+            alt="Left navigation"
+            class="main__arrows"
+            id="left"
+          />
+          <img
+            src="images/icon-angle-right.svg"
+            alt="Right navigation"
+            class="main__arrows"
+            id="right"
+          />
+        </div>
+      </section>
+
+      <section class="main__about">
+        <div class="main__content">
+          <h2 class="main__title">Vertebral</h2>
+          <p class="main__paragraph">
+            Creamos una ferula pensada en las situaciones del dia a dia.
+            Buscamos que una persona que sufra sindrome del tunel carpiano,
+            realice sus actividades con la mayor naturalidad posible. La ferula
+            está diseñada pensando en la ergonomia, ofreciendo libertad a la
+            mano de hacer cualquier movimiento u actividad.
+          </p>
+
+          <h2
+            class="main__title"
+            id="h2title2"
+            style="display: none; opacity: 0"
+          ></h2>
+
+          <h3
+            class="main__title2"
+            id="h3title1"
+            style="display: none; opacity: 0"
+          ></h3>
+
+          <p
+            class="main__paragraph"
+            id="p2"
+            style="display: none; opacity: 0"
+          ></p>
+
+          <h3
+            class="main__title2"
+            id="h3title2"
+            style="display: none; opacity: 0"
+          ></h3>
+
+          <p
+            class="main__paragraph"
+            id="p3"
+            style="display: none; opacity: 0"
+          ></p>
+
+          <a href="project.html" class="main__cta"
+            >Saber más
+            <img src="images/icon-arrow.svg" alt="arrow" class="main__arrow"
+          /></a>
+        </div>
+      </section>
+
+      <section class="main__bg" id="extra"></section>
+
+      <section class="main__about2">
+        <div class="main__content">
+          <h3 class="main__title2" id="main__title2">Caracteristicas</h3>
+          <p class="main__paragraph" id="features">
+            -Material en TPU.<br />
+            -Adaptación ergonomica y universal al tamaño de la mano.<br />
+            -Reducción del movimiento sin bloqueo total de la mano.<br />
+            -Pensado sobre todo para actividades en interiores.<br />
+            -Pensado para prevenir sintomas y reducir la probabilidad de cirugia
+            de tunel carpiano.<br />
+            -Diseño abierto para permitir mejor circulación.
+          </p>
+        </div>
+      </section>
+
+      <section class="main__bg main__bg--second"></section>
+
+      <div class="attribution">
+        Desarrollado por
+        <a
+          href="https://www.linkedin.com/in/diego-alejandro-tamayo-celis-8bb168117/"
+          target="_blank"
+          >Alejandro Tamayo</a
+        >
+      </div>
+    </main>
+
+    <div class="body__filter"></div>
+
+    <script src="script_main.js" defer></script>
+  </body>
+</html>

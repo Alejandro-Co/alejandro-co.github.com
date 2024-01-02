@@ -1,0 +1,1126 @@
+@import url("https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&family=Gloock&family=League+Spartan:wght@100;200;300;400;500;600;700&family=Righteous&family=Tilt+Prism&display=swap");
+
+:root {
+  --Gray: hsl(0, 0%, 70%);
+  --Black: hsl(0, 0%, 0%);
+  --White: hsl(0, 0%, 100%);
+  --Orange: rgb(255, 158, 1);
+  --DarkGray: hsl(0, 0%, 42%);
+}
+
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "League Spartan", sans-serif;
+}
+
+@media (min-width: 350px) {
+  @keyframes blured {
+    from {
+      opacity: 0;
+      filter: blur(10px);
+    }
+
+    to {
+      opacity: 1;
+
+      filter: blur(0px);
+    }
+  }
+
+  body {
+    background-color: var(--Black);
+    overflow-x: hidden;
+  }
+
+  /*.body__image{
+    position: absolute;
+    left:0;
+    top:0;
+    
+    z-index:0;
+  }*/
+
+  #17-1-title,
+  #17-2-title,
+  #17-3-title {
+    text-align: center;
+  }
+
+  .main {
+    margin: 0 auto;
+    max-width: 920px;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, max-content);
+    grid-template-areas: "main" "shop" "img1" "about" "img2" "atrr";
+  }
+
+  .main__hero {
+    background-color: var(--Black);
+    height: 400px;
+
+    background-size: cover;
+    background-position: center;
+    grid-area: main;
+
+    -webkit-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
+    -webkit-animation: blured 1s linear 0s;
+    animation: blured 1s linear 0s;
+  }
+
+  .main__nav {
+    display: flex;
+    z-index: 10;
+  }
+
+  .main__menuicon {
+    display: flex;
+  }
+
+  .main__hamburguer {
+    max-width: 30px;
+  }
+
+  .main__close {
+    display: none;
+    width: 30px;
+    z-index: 10;
+    /*transform: translateY(-100vh);*/
+    transform: translateY(-500%);
+    filter: brightness(0) invert(1);
+    transition: transform filter width 0.5s;
+  }
+
+  .main__logo {
+    max-width: 200px;
+    min-height: 25px;
+    /*display: inline;*/
+    margin: auto;
+    object-fit: contain;
+  }
+
+  .container {
+    /*background-color: white;*/
+
+    margin: 0 auto;
+    padding: 60px 5%;
+    overflow: hidden;
+
+    transition: transform 0.5s;
+  }
+
+  .main__nav::before {
+    content: "";
+
+    display: var(--navdisplay, none);
+    position: absolute;
+    background-color: var(--Black);
+    color: var(--Black);
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: var(--navAfterHeight, 0);
+    transform: var(--navAftert, translateY(-100%));
+
+    transition: transform 0.5s;
+  }
+
+  .main__menu {
+    display: none;
+    width: 80%;
+
+    color: var(--White);
+    /*display: flex;*/
+    gap: 10%;
+    margin: 0 auto;
+    z-index: 10;
+    transform: translateY(-500%);
+    transition: transform 0.5s;
+  }
+
+  .main__link {
+    font-weight: 700;
+    margin: 0 auto;
+    font-size: 14px;
+  }
+
+  .dropdown {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .dropbtn {
+    background-color: #000000;
+    color: white;
+    padding: 5px;
+    margin: 15% auto;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 1s;
+  }
+
+  /* Dropdown button on hover & focus */
+  .dropbtn:hover,
+  .dropbtn:focus {
+    background-color: #b97f29;
+  }
+
+  /* The container <div> - needed to position the dropdown content */
+  /*.dropdown {
+    position: relative;
+    display: inline-block;
+  }*/
+
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #000000;
+
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+
+    transition: opacity 200ms, display 200ms;
+  }
+
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: rgb(255, 255, 255);
+    padding: 6px 12px;
+    font-size: 12px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a[data-value="active"] {
+    color: #b97f29;
+  }
+
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .show {
+    display: block;
+
+    animation: slideaway 700ms;
+
+    transition: opacity 200ms, display 200ms;
+  }
+
+  @keyframes slideaway {
+    from {
+      display: none;
+      opacity: 0;
+    }
+    to {
+      display: block;
+      opacity: 1;
+    }
+  }
+
+  .body__filter {
+    width: 100vw;
+    height: 0vh;
+    opacity: 0;
+    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.596);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.6s;
+  }
+
+  .main__controls {
+    position: absolute;
+    grid-area: main;
+
+    justify-self: end;
+    align-self: end;
+    background-color: black;
+    display: flex;
+    width: 100px;
+    height: 50px;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .main__arrows {
+    width: 15%;
+  }
+
+  #left {
+    opacity: 0.5;
+  }
+
+  .main__about {
+    grid-area: shop;
+    -webkit-animation: blured 2s linear 0s;
+    animation: blured 2s linear 0s;
+  }
+
+  .main__content {
+    width: 80%;
+    height: 100%;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30%;
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+    flex-direction: column;
+  }
+
+  .main__title {
+    color: var(--Orange);
+    font-weight: 700;
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    line-height: 1;
+    transition: all 2s;
+  }
+
+  .main__paragraph {
+    color: var(--Gray);
+    font-weight: 500;
+
+    font-size: 14px;
+    transition: all 2s;
+  }
+
+  .main__cta {
+    color: rgb(255, 255, 255);
+    font-weight: 300;
+    font-size: 25px;
+    display: flex;
+    width: 100%;
+    margin-top: 30px;
+    gap: 5%;
+    letter-spacing: 0.5rem;
+    align-items: center;
+    transition: all 0.56s;
+  }
+
+  .main__arrow {
+    color: rgb(255, 255, 255);
+    width: 20%;
+    filter: brightness(0) invert(1);
+
+    display: inline;
+  }
+
+  #extra {
+    -webkit-animation: blured 4s linear 0s;
+    animation: blured 4s linear 0s;
+  }
+
+  #extra2 {
+    -webkit-animation: blured 11s linear 0s;
+    animation: blured 11s linear 0s;
+  }
+
+  #extra3 {
+    -webkit-animation: blured 6.5s linear 0s;
+    animation: blured 6.5s linear 0s;
+  }
+
+  .main__bg {
+    grid-area: img1;
+    min-height: 250px;
+    height: 100%;
+    background-image: url("/images/FER2.webp");
+    filter: brightness(0.8) contrast(0.7) saturate(1.1) sepia(0.09);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .main__about2 {
+    grid-area: about;
+    transition: opacity 2s;
+    -webkit-animation: blured 5s linear 0s;
+    animation: blured 5s linear 0s;
+  }
+
+  .main__title2 {
+    color: var(--White);
+    font-weight: 700;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+    line-height: 1;
+
+    transition: all 2s;
+  }
+
+  #features {
+    text-align: justify;
+    text-justify: inter-word;
+    font-size: 12.5px;
+  }
+
+  .main__bg--second {
+    grid-area: img2;
+    background-image: url("/images/FER3.webp");
+    filter: brightness(0.8) contrast(0.7) saturate(1.1) sepia(0.09);
+    -webkit-animation: blured 6s linear 0s;
+    animation: blured 6s linear 0s;
+  }
+
+  .attribution {
+    -webkit-animation: blured 7s linear 0s;
+    animation: blured 7s linear 0s;
+  }
+
+  .attribution {
+    grid-area: atrr;
+    margin: 5% auto;
+    font-size: 11px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+  }
+
+  .attribution a {
+    color: rgb(255, 255, 255);
+  }
+
+  /*project page*/
+
+  .main12 {
+    margin: 0 auto;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(7, max-content);
+    grid-template-areas: "Inv" "icon" "Findings" "Prototipe" "Prototipeimages" "Product" "Img2";
+    transition: all 2s;
+  }
+
+  .main1 {
+    margin: 0 auto;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, max-content);
+    grid-template-areas: "main1" "Project" "Problem" "Img1" "Objective";
+  }
+
+  #main__h {
+    background-color: var(--Black);
+    background-image: url("/images/projectmain.webp");
+    background-size: cover;
+    background-position: center;
+    grid-area: main1;
+    height: 250px;
+    -webkit-animation: blured 1s linear 0s;
+    animation: blured 1s linear 0s;
+  }
+
+  .main__about1 {
+    grid-area: Project;
+    -webkit-animation: blured 2s linear 0s;
+    animation: blured 2s linear 0s;
+  }
+
+  .main__about12 {
+    grid-area: Problem;
+    -webkit-animation: blured 3s linear 0s;
+    animation: blured 3s linear 0s;
+  }
+
+  .main__about13 {
+    grid-area: Objective;
+
+    -webkit-animation: blured 5s linear 0s;
+    animation: blured 5s linear 0s;
+  }
+
+  .main__about14 {
+    grid-area: Inv;
+
+    -webkit-animation: blured 6s linear 0s;
+    animation: blured 6s linear 0s;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .main__about15 {
+    grid-area: Findings;
+
+    -webkit-animation: blured 7s linear 0s;
+    animation: blured 7s linear 0s;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .main__about16 {
+    overflow: hidden;
+    grid-area: Prototipe;
+    -webkit-animation: blured 8s linear 0s;
+    animation: blured 8s linear 0s;
+  }
+
+  .main__about17 {
+    overflow: hidden;
+    grid-area: Prototipeimages;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    transition: all 2s;
+
+    -webkit-animation: blured 9s linear 0s;
+    animation: blured 9s linear 0s;
+  }
+
+  .main__about18 {
+    overflow: hidden;
+    grid-area: Product;
+    -webkit-animation: blured 10s linear 0s;
+    animation: blured 10s linear 0s;
+  }
+
+  .main__content1 {
+    width: 80%;
+    height: 100%;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10%;
+    display: flex;
+    margin-bottom: 10%;
+    justify-content: center;
+    /*align-items: center;*/
+    flex-direction: column;
+  }
+
+  .main__content12 {
+    width: 80%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10%;
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+    flex-direction: column;
+  }
+
+  .main__content17 {
+    width: 80%;
+    position: relative;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+    flex-direction: column;
+    pointer-events: none;
+  }
+
+  .main__title1 {
+    color: var(--Orange);
+    font-weight: 700;
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+
+    line-height: 1;
+    transition: all 2s;
+  }
+
+  .main__paragraph1 {
+    color: var(--Gray);
+    font-weight: 500;
+
+    font-size: 14px;
+    transition: all 2s;
+  }
+
+  .main__title3 {
+    color: var(--Orange);
+    font-weight: 400;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    line-height: 1;
+    transition: all 2s;
+  }
+
+  .fin__list > li {
+    list-style-type: circle;
+  }
+
+  .main__bg1 {
+    grid-area: Img1;
+    margin-bottom: 10%;
+    min-height: 250px;
+    height: 100%;
+    background-image: url("/images/img1.webp");
+    filter: brightness(0.8) contrast(0.7) saturate(1.1) sepia(0.09);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .main__bg2 {
+    grid-area: Img2;
+    margin-bottom: 10%;
+    min-height: 250px;
+    height: 100%;
+    background-image: url("/images/produkt.webp");
+    filter: brightness(0.8) contrast(0.7) saturate(1.1) sepia(0.09);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .main__bg3 {
+    grid-area: icon;
+    margin-bottom: 10%;
+    min-height: 150px;
+    height: 100%;
+    background-image: url("/images/icon.jpg");
+    filter: brightness(0.8) contrast(0.7) saturate(1.1) sepia(0.09);
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+
+  .main__gallerydiv2 {
+    display: flex;
+    margin-bottom: 10%;
+
+    padding-top: 2%;
+    padding-bottom: 1%;
+    margin-top: calc((0.1px + 10vw) - 0.1vh);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .main__gallerydiv-text {
+    font-size: calc(18px + 1vw);
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke-width: 0.8px;
+    -webkit-text-stroke-color: Var(--Orange);
+
+    white-space: nowrap;
+    padding: 0 1rem;
+    letter-spacing: 1px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: move 10000ms linear infinite;
+  }
+
+  @keyframes move {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .main__content17-1 {
+    overflow: hidden;
+    position: relative;
+    min-height: 100px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+    flex-direction: column;
+  }
+
+  .content17-1__bi {
+    opacity: 0.6;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 200px;
+  }
+
+  /*Contact page*/
+
+  .main2 {
+    margin: 0 auto;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8, max-content);
+    grid-template-areas: "main2" "Aboutus" "Team" "prof1" "desc1" "prof2" "desc2" "Veertebral";
+  }
+
+  #main__h1 {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgb(0, 0, 0) 0%,
+        rgba(255, 193, 70, 0) 93%
+      ),
+      url("/images/img2.webp");
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: normal;
+    grid-area: main2;
+    height: 400px;
+    -webkit-animation: blured 1s linear 0s;
+    animation: blured 1s linear 0s;
+  }
+
+  .main__content2 {
+    width: 80%;
+    height: 100%;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10%;
+    display: flex;
+    margin-bottom: 10%;
+    justify-content: center;
+    /*align-items: center;*/
+    flex-direction: column;
+  }
+
+  .main__titlectct {
+    color: var(--Gray);
+    font-weight: 1000;
+    font-size: 40px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+
+    line-height: 1;
+    transition: all 2s;
+  }
+
+  .main__titlet {
+    text-align: center;
+    font-weight: 700;
+    font-size: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: Var(--Orange);
+    letter-spacing: 5px;
+    margin-left: auto;
+    margin-right: auto;
+
+    line-height: 1;
+    transition: all 2s;
+  }
+
+  .main__contact1 {
+    grid-area: Aboutus;
+    -webkit-animation: blured 2s linear 0s;
+    animation: blured 2s linear 0s;
+  }
+
+  .main__contact2 {
+    grid-area: Team;
+    border: solid 2px var(--Orange);
+    -webkit-animation: blured 3s linear 0s;
+    animation: blured 3s linear 0s;
+  }
+
+  .main__contact3 {
+    grid-area: prof1;
+    margin-bottom: 10%;
+    min-height: 150px;
+    height: 100%;
+    background-image: url("/images/jona.jpeg");
+    filter: brightness(0.8) contrast(0.7) saturate(1.1) sepia(0.09);
+    background-size: cover;
+    background-position: 25% 40%;
+
+    -webkit-animation: blured 4s linear 0s;
+    animation: blured 4s linear 0s;
+  }
+
+  .main__contact4 {
+    grid-area: desc1;
+    margin-bottom: 20%;
+    -webkit-animation: blured 4s linear 0s;
+    animation: blured 4s linear 0s;
+  }
+
+  .main__contact4 > .main__content12 > .main__title3 {
+    text-align: center;
+  }
+
+  .main__linkedin {
+    width: 10%;
+    filter: invert(0.5) hue-rotate(176deg);
+    margin: 0 auto;
+    transition: all 0.5s;
+  }
+
+  .main__contact4 > .main__content12 {
+    margin-bottom: 0%;
+  }
+
+  .main__contact5 {
+    grid-area: prof2;
+    margin-bottom: 10%;
+    min-height: 150px;
+    height: 100%;
+    background-image: url("/images/imgAle2.png");
+    filter: brightness(0.8) contrast(0.7) saturate(1.1) sepia(0.09);
+    background-size: contain;
+    background-position: center;
+
+    -webkit-animation: blured 4s linear 0s;
+    animation: blured 4s linear 0s;
+  }
+
+  .main__contact6 {
+    grid-area: desc2;
+    margin-bottom: 20%;
+    -webkit-animation: blured 4s linear 0s;
+    animation: blured 4s linear 0s;
+  }
+
+  .main__contact6 > .main__content12 > .main__title3 {
+    text-align: center;
+  }
+
+  .main__linkedin2 {
+    width: 10%;
+    filter: invert(0.5) hue-rotate(176deg);
+    margin: 0 auto;
+
+    transition: all 0.5s;
+  }
+
+  .main__contact6 > .main__content12 {
+    margin-bottom: 0%;
+  }
+
+  .main__contact7 {
+    grid-area: Veertebral;
+    min-height: 250px;
+    height: 100%;
+    background-image: url("/images/vertebral.png");
+    background-size: contain;
+    background-position: center;
+
+    -webkit-animation: blured 8s linear 0s;
+    animation: blured 8s linear 0s;
+  }
+}
+
+@media (min-width: 768px) {
+  #body1::-webkit-scrollbar {
+    display: none;
+  }
+
+  #body3::-webkit-scrollbar {
+    display: none;
+  }
+
+  #body2::-webkit-scrollbar {
+    width: 1vw;
+  }
+
+  #body2::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 20px var(--Black);
+    background: var(--DarkGray);
+  }
+
+  #body2::-webkit-scrollbar-thumb {
+    background-color: var(--Orange);
+  }
+
+  .main {
+    height: 100vh;
+    max-width: 100vw;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "main main main main shop shop shop"
+      "main main main main shop shop shop"
+      "main main main main shop shop shop"
+      "img1 img1 about about img2 img2 atrr"
+      "img1 img1 about about img2 img2 atrr";
+  }
+
+  .main__hero {
+    grid-area: main;
+    height: 100%;
+  }
+
+  #left,
+  #right {
+    transition: all 0.5s;
+  }
+
+  .main__controls {
+    filter: invert(1);
+  }
+
+  #left:hover,
+  #right:hover {
+    background-color: var(--Orange);
+    filter: drop-shadow(-5px 69px 40px #000000) invert(1);
+    cursor: pointer;
+  }
+
+  .main__hamburguer {
+    transition: all 0.6s;
+  }
+
+  .main__hamburguer:hover {
+    filter: invert(1);
+    cursor: pointer;
+  }
+
+  .main__close {
+    transition: all 0.6s;
+  }
+
+  .main__close:hover {
+    width: 40px;
+    cursor: pointer;
+  }
+
+  .main__link:hover {
+    text-decoration: underline white;
+    cursor: crosshair;
+  }
+
+  .main__cta:hover {
+    text-decoration: underline white;
+    cursor: crosshair;
+  }
+
+  .attribution {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .attribution:hover > a {
+    cursor: alias;
+  }
+
+  .main__nav::before {
+    content: "";
+
+    display: var(--navdisplay, none);
+    position: absolute;
+    background-color: var(--Black);
+    color: var(--Black);
+    margin: 0 auto;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: var(--navAfterHeight, 0);
+    transform: var(--navAftert, translateY(-100%));
+    border-bottom: 5px solid var(--White);
+
+    transition: transform 0.5s;
+  }
+
+  .main1 {
+    height: 100vh;
+    max-width: 100vw;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "main1 main1 main1 Project Project Project"
+      "main1 main1 main1 Project Project Project"
+      "main1 main1 main1 Project Project Project"
+      "Problem Problem Img1 Img1 Objective Objective"
+      "Problem Problem Img1 Img1 Objective Objective"
+      "Problem Problem Img1 Img1 Objective Objective";
+  }
+
+  .main12 {
+    height: 100vh;
+    max-width: 100vw;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "Inv Inv icon icon Findings Findings"
+      "Inv Inv icon icon Findings Findings"
+      "Prototipe Prototipe Product Product Img2 Img2"
+      "Prototipeimages Prototipeimages Product Product Img2 Img2"
+      "Prototipeimages Prototipeimages Product Product Img2 Img2"
+      "Prototipeimages Prototipeimages Product Product Img2 Img2"
+      "Prototipeimages Prototipeimages Product Product Img2 Img2";
+  }
+
+  .main__gallerydiv2 {
+    margin-top: 5%;
+  }
+
+  #main__h {
+    height: 100%;
+  }
+
+  .main__about17 {
+    transition: all 2s;
+  }
+
+  .main__content17 {
+    opacity: 0;
+    transition: all 1s;
+  }
+
+  @media (min-width: 768px) and (max-width: 2000px) {
+    .content17-1__bi {
+      min-height: 100px;
+      object-fit: cover;
+      transition: all 2s;
+    }
+  }
+
+  .content17-1__bi {
+    height: 100%;
+    object-fit: cover;
+    transition: all 2s;
+  }
+
+  .content17-1__bi:hover {
+    opacity: 1.2;
+    filter: grayscale(0.56);
+    height: 250px;
+  }
+
+  .content17-1__bi:hover + .main__content17 {
+    opacity: 1;
+  }
+
+  .main2 {
+    height: 100vh;
+    max-width: 100vw;
+    margin: 0 auto;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      "main2 main2 main2 Aboutus Aboutus Aboutus Aboutus Aboutus Aboutus Aboutus"
+      "main2 main2 main2 Aboutus Aboutus Aboutus Aboutus Aboutus Aboutus Aboutus"
+      "main2 main2 main2 Aboutus Aboutus Aboutus Aboutus Aboutus Aboutus Aboutus"
+      "main2 main2 main2 Team prof1 desc1 desc1 prof2 desc2 desc2"
+      "main2 main2 main2 Team prof1 desc1 desc1 prof2 desc2 desc2"
+      "main2 main2 main2 Team prof1 desc1 desc1 prof2 desc2 desc2";
+  }
+  .main__contact2 {
+    border-top: solid 2px var(--Orange);
+    border-right: solid 0px var(--Orange);
+    border-left: solid 0px var(--Orange);
+    border-bottom: solid 0px var(--Orange);
+  }
+
+  @media (max-width: 1200px) and (min-width: 768px) {
+    .main__contact3 {
+      background-size: contain;
+    }
+
+    .main__contact5 {
+      background-size: contain;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .main__contact3 {
+      background-size: cover;
+    }
+
+    .main__contact5 {
+      background-size: cover;
+    }
+  }
+
+  .main__contact3 {
+    background-image: url("/images/jona.jpeg");
+
+    border-top: solid 2px var(--Orange);
+  }
+
+  .main__contact5 {
+    background-image: url("/images/imgAle1.png");
+
+    border-top: solid 2px var(--Orange);
+  }
+
+  .main__contact4 {
+    border-top: solid 2px var(--Orange);
+  }
+
+  .main__contact6 {
+    border-top: solid 2px var(--Orange);
+  }
+
+  #main__h1 {
+    height: 100%;
+  }
+
+  @media (max-width: 999px) and (min-width: 768px) {
+    .main__titlectct {
+      font-size: 12px;
+    }
+
+    .main2 > .main__hero2 > .main__nav > .main__logo {
+      max-width: 150px;
+    }
+  }
+
+  @media (max-width: 1400px) and (min-width: 1000px) {
+    .main__titlectct {
+      font-size: 25px;
+    }
+  }
+
+  .main__titlectct {
+    margin: 5px 0;
+  }
+
+  .main__contact1 > .main__content2 {
+    width: 95%;
+    margin: 5px auto;
+  }
+
+  .main__titlet {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+  }
+
+  .main__contact7 {
+    display: none;
+  }
+
+  .main__linkedin:hover,
+  .main__linkedin2:hover {
+    filter: invert(1) hue-rotate(176deg);
+  }
+}
